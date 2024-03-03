@@ -1,0 +1,759 @@
+@font-face {
+  font-family: gilroy;
+  src: url("./gilroy.ttf");
+}
+@font-face {
+  font-family: manBold;
+  src: url("./ManropeExtraBold.ttf");
+}
+@font-face {
+  font-family: manSemi;
+  src: url("./ManropeSemiBold.ttf");
+}
+@font-face {
+  font-family: manReg;
+  src: url("./ManropeRegular.ttf");
+}
+@font-face {
+  font-family: marko;
+  src: url("./MarkoOneRegular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --orage-color: rgb(253, 101, 11);
+  --orange-light: rgb(255, 247, 220);
+}
+
+/* ##############################   Header   ############################### */
+#top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 50px;
+  padding: 5px 7vw;
+  background-color: #333;
+  font-family: "manReg";
+}
+#top p {
+  color: rgb(227, 227, 227);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+}
+#header {
+  width: 100vw;
+  height: 90px;
+  background-color: rgb(255, 255, 255);
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "manReg";
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+#header nav {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+#header nav a {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+.logo {
+  height: 35px;
+}
+#header .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#header .right Button {
+  letter-spacing: 0.3px;
+  font-family: "poppins";
+  padding: 15px 20px;
+}
+#header .right Button:last-child {
+  background-color: #333;
+  color: aliceblue;
+  font-weight: 500;
+}
+
+/* ##########################   Home   ###########################3 */
+#home {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0;
+  background-color: var(--orange-light);
+}
+#home .heroContainer {
+  padding: 0 7vw;
+  /* display: flex; */
+  position: relative;
+}
+#home .heroContainer h1 {
+  font-family: "manBold";
+  font-weight: 700;
+  font-size: 48px;
+  color: black;
+}
+#home .heroContainer p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  font-family: "manReg";
+  color: rgb(75, 75, 75);
+  margin-top: 25px;
+  width: 50%;
+}
+#home .heroContainer img {
+  position: absolute;
+  top: 0px;
+  width: 650px;
+  right: 0px;
+}
+#home #searchBox {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 100px;
+  border: 1px solid rgb(234, 234, 234);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#searchBox Input,
+#searchBox Select {
+  border: 1px solid rgb(204, 204, 204);
+  background-color: white;
+}
+#searchBox Button {
+  background-color: black;
+  color: white;
+  width: 200px;
+}
+
+/* ###########################    listingHome    ############################# */
+
+#listingHome {
+  padding: 70px 8vw;
+}
+#listingHome .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#listingHome h1 {
+  font-weight: 700;
+  font-family: "manBold";
+  font-size: 40px;
+  letter-spacing: -0.5px;
+}
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+.categories p {
+  font-family: "manSemi";
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  color: rgb(190, 190, 194);
+}
+.categories p:first-child {
+  color: #333;
+}
+#listingHome .title button {
+  font-size: 20px;
+  color: var(--orage-color);
+  font-family: "manSemi";
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#listingHome .title button i {
+  font-size: 30px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* ###################################  Cards  ################################### */
+
+#card {
+  width: 400px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+#card .image {
+  width: 100%;
+  height: 300px;
+  background-color: #333;
+}
+#card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#card .content {
+  padding: 20px;
+  background-color: white;
+}
+#card h3 {
+  font-family: "manReg";
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 8px;
+  color: #222;
+  letter-spacing: 0.3px;
+}
+#card h3 i {
+  font-size: 22px;
+}
+#card p {
+  color: rgb(100, 100, 141);
+  font-family: "manSemi";
+  font-size: 16px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#card p i {
+  font-size: 22px;
+}
+#card .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+#card .buttons button {
+  padding: 15px 30px;
+  background-color: #111;
+  color: white;
+  border-radius: 15px;
+  font-family: "manSemi";
+  letter-spacing: 0.5px;
+}
+#card .buttons span {
+  font-family: "manBold";
+  padding: 10px 30px;
+  font-size: 21px;
+  font-weight: 700;
+}
+/* ################################   About   #################################### */
+
+#about {
+  padding: 100px 7vw;
+}
+#about .top {
+  text-align: center;
+}
+#about h1 {
+  font-family: "manBold";
+  font-weight: 700;
+  font-size: 50px;
+  color: black;
+  text-align: center;
+}
+#about p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: "manReg";
+  color: rgb(75, 75, 75);
+  text-align: center;
+  width: 690px;
+  margin: 25px auto;
+}
+#about img {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+#about .center {
+  margin-top: 100px;
+}
+#about .center .title p {
+  width: 100%;
+  font-family: "poppins";
+  color: rgb(253, 101, 11);
+  font-size: 15px;
+  font-weight: 600;
+  text-align-last: left;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+#about .center h2 {
+  font-family: "italiana";
+  font-weight: 900;
+  font-size: 42px;
+  color: rgb(0, 0, 0);
+  letter-spacing: 0.5px;
+}
+
+#about .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+#about .container .item {
+  width: 410px;
+  padding: 30px 25px;
+  border: 1px solid gainsboro;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#about .container .item img {
+  width: 150px;
+}
+#about .container .item h3 {
+  font-weight: 600;
+  font-family: "poppins";
+  font-size: 20px;
+  color: #222;
+  letter-spacing: 0.2px;
+}
+#about .container .item p {
+  width: 100%;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+  line-height: 27px;
+  font-family: "jost";
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-top: 10px;
+  color: rgb(115, 115, 115);
+}
+#about .container .item button {
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-family: "jost";
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  color: #333;
+}
+#about .container .item:hover button {
+  color: rgb(253, 101, 11);
+}
+#about .newsletter {
+  width: 90%;
+  margin: 50px auto;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: rgb(190, 190, 194);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+#about .newsletter .wrapper {
+  width: 560px;
+}
+#about .newsletter h3 {
+  font-weight: 600;
+  font-family: "manBold";
+  font-size: 35px;
+  text-align: center;
+}
+#about .newsletter p {
+  width: 100%;
+  font-size: 18px;
+  color: #222;
+  margin: 10px 0;
+}
+#about .newsletter input {
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  padding: 14px 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-family: "manSemi";
+  margin-top: 20px;
+  outline: none;
+}
+#about .newsletter button {
+  background-color: #222;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 10px;
+  font-family: "manSemi";
+  letter-spacing: 0.3px;
+}
+
+/* ###########################   Login Fomm    ################################ */
+
+#form {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(71, 71, 71);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#form .wrapper {
+  background-color: white;
+  width: 500px;
+  padding: 50px 25px;
+  border-radius: 10px;
+}
+#form .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#form .wrapper h2 {
+  font-weight: 800;
+  font-family: "manBold";
+  font-size: 34px;
+  letter-spacing: -0.7px;
+}
+#form .wrapper i {
+  font-size: 30px;
+  cursor: pointer;
+}
+#form form {
+  margin-top: 15px;
+}
+#form form Input {
+  padding: 30px 20px !important;
+  margin-top: 15px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+#form #errorMsg {
+  font-size: 15px;
+  color: red;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 5px;
+  border: none;
+  text-align: left;
+}
+#form form Button {
+  width: 100%;
+  padding: 30px 20px !important;
+  margin-top: 15px;
+  border-radius: 10px;
+  font-size: 19px;
+  background-color: #222;
+}
+#form form Button:hover {
+  background-color: #333;
+  color: rgb(255, 255, 255);
+}
+#form form .right {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  z-index: 5;
+}
+#form form .right i {
+  font-size: 25px;
+}
+#form .googleLogIn {
+  width: 100%;
+  padding: 7px 20px !important;
+  margin-top: 15px;
+  border-radius: 10px;
+  font-size: 19px;
+  color: #222;
+  border: 1px solid #222;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  font-weight: 600;
+}
+#form .googleLogIn i {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#form p {
+  font-size: 20px;
+  font-family: "manSemi";
+  color: #333;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  border-top: 1px solid rgb(200, 200, 200);
+}
+#form p span {
+  color: rgb(0, 72, 255);
+  text-decoration: underline;
+}
+/* #################################   Listing Page   ############################# */
+
+#listingPage {
+  padding: 50px 7vw;
+  background-color: var(--orange-light);
+  min-height: 100vh;
+}
+#listingPage h1 {
+  font-weight: 700;
+  font-family: "manBold";
+  font-size: 40px;
+  letter-spacing: -0.5px;
+}
+#listingPage .filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 25px 0;
+}
+#listingPage .search {
+  position: relative;
+}
+#listingPage .search i {
+  position: absolute;
+  right: 20px;
+  top: 13px;
+  font-size: 25px;
+  color: #444;
+  z-index: 5;
+}
+#listingPage .filters .search Input {
+  width: 450px;
+  background-color: white;
+  padding: 30px 20px !important;
+  font-size: 20px;
+  border-radius: 10px;
+}
+#listingPage .filters select {
+  /* position: relative; */
+  padding: 15px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  font-size: 19px;
+  color: #666;
+  font-family: "manSemi";
+  outline: none;
+  /* ##################### */
+  appearance: none; /* Hide default arrow on some browsers */
+  -webkit-appearance: none; /* Hide default arrow on WebKit-based browsers */
+  -moz-appearance: none; /* Hide default arrow on Firefox */
+  background-image: url("https://static.thenounproject.com/png/551749-200.png");
+  background-size: 18px; /* Adjust size of the custom arrow */
+  background-repeat: no-repeat;
+  background-position: 90% 50%; /* Position the custom arrow */
+  padding-right: 25px;
+  /* width: 150px; */
+}
+#listingPage .filters Input {
+  width: 100px;
+  background-color: white;
+  padding: 30px 20px !important;
+  font-size: 19px;
+  border-radius: 10px;
+  font-family: "manSemi";
+}
+#listingPage .filters button {
+  padding: 15px 30px;
+  background-color: #111;
+  color: white;
+  font-family: "manSemi";
+  letter-spacing: 0.3px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+/* ############################  Property Details  ########################## */
+
+#propertyDetails {
+  padding: 50px 7vw;
+  background-color: rgb(255, 249, 246);
+}
+#propertyDetails .top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#propertyDetails .swiper {
+  width: 60%;
+  height: 100%;
+  margin: 0;
+}
+#propertyDetails .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#propertyDetails .topRight {
+  width: 30%;
+}
+#propertyDetails .agentInfo {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(236, 236, 236);
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 1px 8px 0px;
+  background-color: white;
+}
+#propertyDetails .agentInfo h2 {
+  font-size: 25px;
+  font-family: "manBold";
+  letter-spacing: -0.5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+#propertyDetails .agentInfo h3 {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  font-family: "poppins";
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+#propertyDetails .agentInfo p {
+  color: #555;
+  font-size: 16px;
+  line-height: 35px;
+  font-family: "manSemi";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#propertyDetails .agentInfo p i {
+  font-size: 20px;
+}
+#propertyDetails .agentInfo button {
+  padding: 11px 25px;
+  background-color: #222;
+  color: white;
+  font-size: 16px;
+  font-family: "manReg";
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+#propertyDetails .map iframe {
+  width: 100%;
+  height: 300px;
+  margin-top: 25px;
+}
+
+/* #################   Project Description   ################### */
+
+#projectDes {
+  padding: 20px;
+  width: 850px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#projectDes h1 {
+  font-family: "manBold";
+  font-size: 30px;
+  letter-spacing: -0.7px;
+}
+#projectDes h3 {
+  font-family: "manSemi";
+  font-size: 20px;
+  letter-spacing: -0.7px;
+  margin-top: 10px;
+  color: #333;
+}
+#projectDes h2 {
+  font-family: "manBold";
+  font-size: 21px;
+  letter-spacing: -0.7px;
+  margin-top: 10px;
+  color: #222;
+  margin-top: 25px;
+}
+#projectDes p {
+  font-size: 18px;
+  color: #444;
+  font-family: "manReg";
+  margin-top: 10px;
+  line-height: 30px;
+}
+#projectDes p i {
+  margin-right: 5px;
+}
+
+/* ###########################   Not Found   ######################################### */
+#notFound {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  background-color: rgb(207, 228, 253);
+  min-height: 100vh;
+}
+#notFound img {
+  width: 360px;
+}
+#notFound h2 {
+  font-family: "manBold";
+  font-size: 30px;
+  margin-top: 50px;
+}
+#notFound button {
+  padding: 14px 27px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  font-size: 20px;
+  font-family: "manSemi";
+  margin-top: 25px;
+}
