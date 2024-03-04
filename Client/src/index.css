@@ -1,22 +1,22 @@
 @font-face {
   font-family: gilroy;
-  src: url("./gilroy.ttf");
+  src: url("./Fonts/gilroy.ttf");
 }
 @font-face {
   font-family: manBold;
-  src: url("./ManropeExtraBold.ttf");
+  src: url("./Fonts/ManropeExtraBold.ttf");
 }
 @font-face {
   font-family: manSemi;
-  src: url("./ManropeSemiBold.ttf");
+  src: url("./Fonts/ManropeSemiBold.ttf");
 }
 @font-face {
   font-family: manReg;
-  src: url("./ManropeRegular.ttf");
+  src: url("./Fonts/ManropeRegular.ttf");
 }
 @font-face {
   font-family: marko;
-  src: url("./MarkoOneRegular.ttf");
+  src: url("./Fonts/MarkoOneRegular.ttf");
 }
 * {
   margin: 0;
@@ -94,6 +94,28 @@ body {
   background-color: #333;
   color: aliceblue;
   font-weight: 500;
+}
+#header .profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#header .profile h2 {
+  padding: 8px;
+  font-size: 20px;
+  font-family: "manSemi";
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(253, 101, 11);
+  color: white;
+}
+#header .profile h4 {
+  font-family: "manSemi";
+  font-size: 18px;
 }
 
 /* ##########################   Home   ###########################3 */
@@ -756,4 +778,59 @@ body {
   font-size: 20px;
   font-family: "manSemi";
   margin-top: 25px;
+}
+
+/* ##########################   Profile   ############################ */
+
+#profile {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(255, 249, 246);
+  padding: 30px 7vw;
+}
+#profile h1 {
+  font-family: "manBold";
+  font-size: 35px;
+  letter-spacing: -0.5px;
+}
+#profile .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#profile .userInfo {
+  width: 350px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 25px 25px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#profile .userInfo h2 {
+  font-family: "manSemi";
+  font-size: 20px;
+}
+#profile .userInfo p {
+  font-family: "manReg";
+  font-size: 18px;
+  color: #333;
+}
+#profile .userInfo img {
+  width: 150px;
+  margin-bottom: 50px;
+}
+#profile .userInfo label {
+  margin-top: 10px;
+  display: block;
+}
+#profile .btn {
+  padding: 12px 24px;
+  background-color: #111;
+  color: white;
+  border-radius: 10px;
+  font-family: "manReg";
+  font-size: 18px;
+  margin-top: 25px;
+}
+#profile .btn:hover {
+  background-color: #222;
 }

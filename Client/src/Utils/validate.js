@@ -1,5 +1,6 @@
-export const validateFormData = (username, email, password) => {
-  console.log(username, email, password);
+export const validateFormData = (email, password) => {
+  console.log(email, password);
+
   const validEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
   const validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
 

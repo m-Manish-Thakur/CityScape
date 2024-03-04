@@ -24,6 +24,13 @@ const userSchema = mongoose.Schema(
       type: String,
       default: "user",
     },
+    // Agent-specific data
+    agentData: {
+      loction: String,
+      phone: Number,
+      email: String,
+      bio: String,
+    },
   },
   {
     timestamps: true,

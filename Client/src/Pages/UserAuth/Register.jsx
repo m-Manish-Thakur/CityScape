@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Input, InputGroup, Button } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
-import { validateFormData } from "../Utils/validate";
+import { validateFormData } from "../../Utils/validate";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 
@@ -17,44 +17,46 @@ const Register = () => {
   const password = useRef();
 
   const handleSignup = async () => {
-    const msg = validateFormData(username.current.value, email.current.value, password.current.value);
+    const msg = validateFormData(email.current.value, password.current.value);
     setErrorMsg(msg);
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/user/api/v1/auth/signup",
-        {
-          username: username.current.value,
-          email: email.current.value,
-          password: password.current.value,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
+    if (msg === null) {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/user/api/v1/auth/signup",
+          {
+            username: username.current.value,
+            email: email.current.value,
+            password: password.current.value,
           },
-        }
-      );
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-      toast({
-        title: "Account created.",
-        description: "We've created your account for you.",
-        status: "success",
-        duration: 3000,
-        isClosable: true,
-      });
+        toast({
+          title: "Account created.",
+          description: "We've created your account for you.",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
 
-      username.current.value = "";
-      email.current.value = "";
-      password.current.value = "";
-      navigate("/");
-    } catch (error) {
-      const errorMessage = error?.response?.data?.msg || "An error occurred.";
+        username.current.value = "";
+        email.current.value = "";
+        password.current.value = "";
+        navigate("/");
+      } catch (error) {
+        const errorMessage = error?.response?.data?.msg || "An error occurred.";
 
-      toast({
-        title: errorMessage,
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
+        toast({
+          title: errorMessage,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
     }
   };
 

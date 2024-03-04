@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@chakra-ui/button";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const { user, token } = useSelector((store) => store.user);
+  console.log(user);
+
   return (
     <div>
       <div id="top">
@@ -29,14 +33,25 @@ const Header = () => {
           <a href="#">Contact</a>
         </nav>
         <div className="right">
-          <Button colorScheme="black" variant="outline">
-            Register
-          </Button>
-          <Link to="/user/login">
-            <Button colorScheme="orange" size="md">
-              Log in
-            </Button>
-          </Link>
+          {user ? (
+            <Link to="/user/profile">
+              <div className="profile">
+                <h4>{user?.username}</h4>
+                <h2>{user?.username?.slice(0, 1)}</h2>
+              </div>
+            </Link>
+          ) : (
+            <>
+              <Button colorScheme="black" variant="outline">
+                Register
+              </Button>
+              <Link to="/user/login">
+                <Button colorScheme="orange" size="md">
+                  Log in
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

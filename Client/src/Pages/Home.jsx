@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Input, Select, Button } from "@chakra-ui/react";
 import PropertyCard from "../Components/PropertyCard";
 

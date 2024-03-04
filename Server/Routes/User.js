@@ -40,10 +40,14 @@ router.post("/api/v1/auth/login", async (req, res) => {
       });
     }
 
+    console.log(user);
+
     if (user && (await bcrypt.compare(password, user.password))) {
       const token = jwt.sign({ email: email }, jwt_Secret, {
         expiresIn: "24h",
       });
+
+      user.token = token;
 
       return res.status(200).json({
         user,
@@ -54,6 +58,24 @@ router.post("/api/v1/auth/login", async (req, res) => {
         msg: "Email or Password is invailid",
       });
     }
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Server error",
+    });
+  }
+});
+
+// ##################  Apply for Agent  #######################
+
+router.post("/api/v1/auth/applyForAgent", async (req, res) => {
+  try {
+    const { location, phone, email, bio } = req.body;
+
+    const user = await User.findOne({ email: email });
+
+    user.role = "Agent";
+    user.agentData = { location, phone, email, bio };
+    return res.status(201).json({ user });
   } catch (error) {
     return res.status(500).json({
       msg: "Server error",
