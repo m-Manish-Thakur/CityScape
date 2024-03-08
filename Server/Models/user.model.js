@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema(
     },
     // Agent-specific data
     agentData: {
-      loction: String,
+      location: String,
       phone: Number,
       email: String,
       bio: String,
